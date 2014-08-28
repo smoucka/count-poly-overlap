@@ -3,6 +3,8 @@ count-poly-overlap
 
 ArcGIS Python Toolbox used to count overlapping polygons within a layer.
 
+#####WARNING - arcpy Union tool does not like spaces in paths and will throw an error.This is pure silliness as the default directory for Business Analyst (created during installation!) is "My Output Data".
+
 This tool is a reponse to the rapidly dwindling number of available tools in the lower level licenses with each subsequent ESRI ArcGIS update.
 
 This is not a complicated tool, it just combines a series of other tools in a workflow I use regularly. Given a polygon feature class or shapefile, the tool will perform a union. The resulting layer receives a new field [DissField] and each value is populated as a concatenation of the shape's area, centroid x-value and centroid y-value. These polygons are then dissolved based on [DissField] while summarizing the number of duplicate polygons. The sample below shows a resulting layer symbolized sequentially based on the count of duplicate dissolved polygons.
